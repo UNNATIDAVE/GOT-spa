@@ -1,0 +1,13 @@
+<a ng-href='#/books/{{ item.url.split("/").pop() }}' >
+    <div class="col-xs-11 col-md-3 col-md-offset-2 text-center">
+        <img src="images/bookslogo.png" style="width: 200px;height: 200px;" />
+            <h3 class="text-center">{{ item.name }}</h3>
+	        <h5 class="text-center">ISBN : {{ item.isbn }}</h5>
+	        <h5 class="text-center">No of Pages : {{ item.numberOfPages }}</h5>
+	        <h5 class="text-center">Publishers : {{ item.publisher }}</h5>
+	</div>
+</a>
+	
+      
+
+

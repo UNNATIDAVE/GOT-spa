@@ -1,0 +1,78 @@
+<navigation></navigation>
+
+<a name="books"></a>
+<section id="books" class="intro-header bg-light-gray bounds content-section-sp">
+   <div class="container">
+      <div class="row" >
+         <div class="col-lg-12 text-center">
+            <h2>House of Game of Thrones</h2>
+            <h3>   Below you will find all the details of House   </h3>
+         </div>
+      </div>
+      
+      <hr style=" border-top: 1px solid black; margin-top: 5px;">
+      
+      <div class="row">
+         <div ng-repeat = "data in houseCtrl.hData">
+            <div  class="col-sm-12 col-md-12 text-center">
+               <i class="fa fa-home fa-5x" aria-hidden="true"></i>
+               <h2 style="margin: 10px 5px;" ng-if ='data.name != ""'><b> {{ data.name }}  </b></h2>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4>Region : {{data.region|| "Data Unavailable"}}</h4>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4>Seats : {{ data.seats[0] || "Data Unavailable" }}</h4>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4>Titles : {{houseCtrl.titles || "Data Unavailable"}}</h4>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4>Founded : {{ data.founded || "Data Unavailable" }}</h4>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4>
+                  Founder :   {{data.foundr || "Data Unavailable"}}<!-- <h6><a ng-href='#/characters/{{ data.heir.split("/").pop() }}' class="link">{{ data.founder }}</a>
+                              <span ng-if="data.founder==''">Data Unavailable</span></h6> -->
+               </h4>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4>Words: {{ data.words || "Data Unavailable" }}</h4>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4>
+                  Heir :      <h6><a ng-href='#/characters/{{ data.heir.split("/").pop() }}' class="link">{{ data.heir }}</a></h6>
+                              <h6 ng-if="data.heir==''">Data Unavailable</h6>
+               </h4>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4>
+                  Current Lord : <h6><a ng-href='#/characters/{{ data.currentLord.split("/").pop() }}' class="link">{{ data.currentLord  }}</a></h6>
+                                 <h6 ng-if="data.currentLord==''">Data Unavailable</h6>
+               </h4>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4>
+                  Overlord :     <h6><a ng-href='#/houses/{{ data.overlord.split("/").pop() }}' class="link">{{ data.overlord  }}</a></h6>
+                                 <h6 ng-if="data.overlord==''">Data Unavailable</h6>
+               </h4>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4>Coat Of Arms :</h4>
+                  "{{ data.coatOfArms || "Data Unavailable" }}"
+            </div>
+            <div class="col-sm-12 col-md-12 text-center">
+               <div ng-if = 'data.swornMembers.length >= 1'>
+                  <h3>Sworn Members : </h3>
+                     <div class="col-sm-6 col-md-6 text-center" ng-repeat ="sworn in data.swornMembers">
+                        <h6><a ng-href ='#/characters/{{ sworn.split("/").pop() }}' class="link">{{ sworn }}</a></h6>
+                     </div>
+               </div>
+            </div>
+            <div class="col col-sm-12 col-md-12 text-center" style="display: flex;justify-content: center;margin: 10px 0px;">
+               <p><button class="w3-button w3-blue w3-round-xxlarge" class="btn btn-default"  onclick="window.history.back();" style="color: black;">Back</button></p>
+            </div>
+         </div>
+      </div>      <!-- Row Ends -->
+   </div>         <!-- Container Ends -->
+</section>        <!-- Section Ends -->

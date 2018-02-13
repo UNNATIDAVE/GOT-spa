@@ -1,0 +1,34 @@
+<div class="wrap">
+   <div class="bg-overlay">
+      <img src="images/header.jpg">
+      
+         <div class="intro-message">
+            <ul class="list-inline intro-social-buttons">
+               <li>
+                  <a ng-href="#/all" class="btn btn-default btn-lg" ng-click="all-view.html" ui-sref="all" style="width: 210px;">
+                     <i class="fa fa-address-book fa-fw"></i>
+                     <span class="network-name">All</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="#/books" class="btn btn-default btn-lg" ng-click="mainCtrl.booksShow()" ui-sref="booksShow" style="width: 210px;">
+                     <i class="fa fa-book fa-fw"></i>
+                     <span class="network-name">Books</span>
+                  </a>
+               </li>
+               <li>
+                  <a ng-href="#/houses" class="btn btn-default btn-lg" ng-click="mainCtrl.housesShow()" ui-sref="housesShow" style="width: 210px;">
+                     <i class="fa fa-home fa-fw"></i>
+                     <span class="network-name">Houses</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="#/characters" class="btn btn-default btn-lg" ng-click="mainCtrl.charactersShow()" ui-sref="charactersShow" style="width: 210px;">
+                     <i class="fa fa-users fa-fw"></i>
+                     <span class="network-name">Characters</span>
+                  </a>
+               </li>
+            </ul>         
+         </div>      <!-- intro-message class Ends -->
+   </div>            <!-- bg-overlay class Ends -->
+</div>               <!-- wrap class Ends -->

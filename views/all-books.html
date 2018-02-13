@@ -1,0 +1,54 @@
+<navigation></navigation>
+
+<!--TO DISPLAY ALL BOOKS-->
+<a name="books"></a>
+<section id="books" class="intro-header bg-light-gray bounds content-section-ap">
+   <div class="container-fluid">
+      <div ng-if="mainCtrl.books">
+         <div class="row">
+
+            <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+               <h2>Books of Game of Thrones</h2>
+               <h3>  Below you will find all Books </h3>
+            </div>
+            <div class="col-md-3  col-xs-6 col-sm-3"  style="padding:0 !important; margin:10px 0px">
+               <select class="hh" ng-model="searchBookName.name"  >
+                  <option class="form-control" selected="selected">--Select Name--</option>
+                  <option class=" form-control" ng-repeat="item in mainCtrl.allBooks | unique : 'name' | orderBy:'name'" ng-if='item.name' value="{{item.name}}">{{item.name}}</option>
+               </select>
+            </div>
+            <div class="col-md-3  col-xs-6 col-sm-3"  style="padding:0 !important; margin:10px 0px;">
+               <select class="hh" ng-model="searchBookPub.publisher">
+                  <option class="form-control"  value="" enabled >--Select Publisher--</option>
+                  <option class="form-control" ng-repeat="item in mainCtrl.allBooks | unique : 'publisher' | orderBy:'publisher'" value="{{item.publisher}}">{{item.publisher}}</option>
+               </select>
+            </div>
+            <div class="col-md-3  col-xs-6 col-sm-3"  style="padding:0 !important; margin:10px 0px">
+               <select class="hh" ng-model="searchBookIsbn.isbn">
+                  <option class="form-control"  value="" enabled >--Select ISBN--</option>
+                  <option class="form-control"  ng-repeat="item in mainCtrl.allBooks  | orderBy:'isbn'"" value="{{item.isbn}}"  >{{item.isbn}}</option>
+               </select>
+            </div>
+            <!-- for sorting data -->
+            <div class="col-md-3  col-xs-6 col-sm-3" style="padding:0 !important; margin:10px 0px">
+               <button type="button" ng-show="ascendingButton" ng-click="changeOrder()" class = "form-control hh abtn" name="button" style="width: 50%;">
+                  <span style="float:left;">Sort</span>
+                  <i class="fa fa-long-arrow-down fa-2x" aria-hidden="true" style="float:right;"></i>
+               </button>
+               <button type="button" ng-show="descendingButton" ng-click="changeOrder()" class = "form-control hh abtn" name="button" style="width: 50%;">
+                  <span style="float:left;">Sort</span>
+                  <i class="fa fa-long-arrow-up fa-2x" aria-hidden="true" style="float:right;"></i>
+               </button>
+            </div>
+         </div>   <!-- Row Ends -->
+         
+      <hr style=" border-top: 1px solid black; margin-top: 5px;">
+
+         <div ng-repeat = "item in mainCtrl.allBooks | filter:searchBookName | filter:searchBookPub | filter:searchBookIsbn | orderBy: alterOrder" >
+            <books-dir ></books-dir>
+         </div>
+
+      </div>      <!-- ng-if Ends -->
+   </div>         <!-- Container Ends -->
+</section>        <!-- Section Ends -->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>  <!-- Back to top button -->

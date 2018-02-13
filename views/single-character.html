@@ -1,0 +1,78 @@
+<navigation></navigation>
+
+<a name="books"></a>
+<section id="books" class="intro-header bg-light-gray bounds content-section-sp">
+   <div class="container">
+      <div class="row" >
+         <div class="col-lg-12 text-center">
+            <h2>Character of Game of Thrones</h2>
+            <h3> Below you will find all the details of Character  </h3>
+         </div>
+      </div>
+      
+      <hr style=" border-top: 1px solid black; margin-top: 5px;">
+      
+      <div class="row">
+         <div ng-repeat="data in charCtrl.charsData">
+            <div class="col-sm-12 col-md-12 text-center">
+               <i class="fa fa-male fa-5x" aria-hidden="true"></i>
+               <h2 ng-if ='data.name != ""'>
+                  <span style="margin:0px 5px;"></span> <b> {{ data.name }}</b> 
+               </h2>
+               <h4>Known as : "{{charsCtrl.knownAs || "Data Unavailable" }}" </h4>
+            </div>
+      
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4>Gender : {{ data.gender || "Data Unavailable" }}</h4>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4> Born : {{ data.born || "Data Unavailable" }}</h4>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4>Culture : {{ data.culture || "Data Unavailable" }}</h4>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4>Died : {{ data.died || "Data Unavailable" }}</h4>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4>
+                  Father :    <h6 class="link"><a ng-href ='#/characters/{{ data.father.split("/").pop() }}' >{{ data.father }}</a></h6>
+                              <h6 ng-if="data.father==''">Data Unavailable</h6>
+               </h4>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4>
+                  Mother :    <h6 class="link"> <a ng-href ='#/characters/{{ data.mother.split("/").pop() }}' > {{ data.mother }}</a></h6>
+                              <h6 ng-if="data.mother==''">Data Unavailable</h6>
+               </h4>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4>
+                  Spouse :    <h6 class="link"><a  ng-href ='#/characters/{{ data.spouse.split("/").pop() }}' >{{ data.spouse}}</a></h6>
+                              <h6 ng-if="data.spouse==''">Data Unavailable</h6>
+               </h4>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4>Played by : "{{ data.playedBy[0] || "Data Unavailable"}}"</h4>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4>Title : "{{ data.titles[0] || "Data Unavailable"}}"</h4>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4>Appeared in : "{{ charsCtrl.seasons || "Data Unavailable" }}"</h4>
+            </div>
+            <div class="col-sm-12 col-md-12 text-center" ng-if = 'data.books.length >= 1'>
+               <h4>Books :</h4>
+               <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+                  <div  ng-repeat ="books in data.books">
+                     <h6><a ng-href ='#/books/{{ books.split("/").pop() }}'  class="link">{{ books }}</a></h6>
+                  </div>
+               </div>
+            </div>
+            <div class="col-sm-12 col-md-12" style="display: flex;justify-content: center;margin: 10px 0px;">
+               <p><button class="w3-button w3-blue w3-round-xxlarge" class="btn btn-default"  onclick="window.history.back();" style="color: black;">Back</button></p>
+            </div>
+         </div>
+      </div>      <!-- Row Ends -->
+   </div>         <!-- Container Ends -->
+</section>        <!-- Section Ends -->

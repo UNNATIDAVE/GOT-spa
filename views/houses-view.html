@@ -1,0 +1,7 @@
+<a ng-href='#/houses/{{item.url.split("/").pop()}}' >
+    <div class="col-xs-11 col-md-3 col-md-offset-2 text-center houses">
+        <img src="images/houses.jpg" style="width: 200px;height: 200px;"/>
+            <h3> {{ item.name }}</h3>
+	        <h5>Region : {{ item.region|| "Region Not Available" }}</h5>
+    </div>
+</a>

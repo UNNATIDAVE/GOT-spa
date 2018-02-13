@@ -1,0 +1,59 @@
+<navigation></navigation>
+
+<a name="books"></a>
+<section id="books" class="intro-header bg-light-gray bounds content-section-sp">
+   <div class="container">
+      <div class="row" >
+         
+         <div class="col-lg-12 text-center">
+            <h2>Book of Game of Thrones</h2>
+            <h3>   Below you will find all the details of Book </h3>
+         </div>
+      </div>
+      
+      <hr style=" border-top: 1px solid black; margin-top: 5px;">
+      
+      <div class="row">
+         <div ng-repeat="data in bookCtrl.booksData">
+            <div class="col-sm-12 col-md-12 text-center">
+               <i class="fa fa-book fa-5x" aria-hidden="true"></i>
+               <h2 style="margin: 10px 5px;" ng-if ='data.name != ""'><b> {{ data.name }}  </b></h2>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4><b>Author</b> : {{ booksCtrl.author }}</h4>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4><b>Country</b> : {{ data.country }}</h4>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4><b>Number of Pages</b> : {{ data.numberOfPages }}</h4>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4><b>Publisher</b> : {{ data.publisher }}</h4>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4><b>Released on</b> : {{ data.released | date }}</h4>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4><b>ISBN</b> : {{ data.isbn  }}</h4>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4><b>Total Characters</b> : {{ data.characters.length  }}</h4>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+               <h4><b>Media type</b> : {{ data.mediaType  }}</h4>
+            </div>
+            <div class="col-sm-12 col-md-12 text-center" >
+               <h4><b>Main Characters :</b></h4>
+               <div class="col-sm-6 col-md-6 text-center" ng-if = 'data.povCharacters.length >= 1' ng-repeat ="pov in data.povCharacters">
+                  <h6><a ng-href ='#/characters/{{ pov.split("/").pop() }}' class="link">{{ pov}}</a></h6>
+                  <h6 ng-if = "data.povCharacters == ''">Data Unavailable</h6>
+               </div>
+            </div>
+            <div class="col-sm-12 col-md-12" style="display: flex;justify-content: center;margin: 10px 0px;">
+               <p><button class="w3-button w3-blue w3-round-xxlarge" class="btn btn-default"  onclick="window.history.back();" style="color: black;">Back</button></p>
+            </div>
+         </div>
+      </div>   <!-- Row Ends -->
+   </div>     <!-- Container Ends --> 
+</section>     <!-- Section Ends -->

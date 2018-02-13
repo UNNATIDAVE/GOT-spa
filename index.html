@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="gotSpa">
+  <head>
+    
+    <title>Game of Thrones</title>
+    <meta charset="utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="Find all the information about Game of Thrones and the world of Ice And Fire">
+  
+    <!-- stylesheet css -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link rel="stylesheet" type='text/css' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans' > 
+
+    
+  </head>
+	
+  <body>
+      <div ng-view></div>
+  
+    <!-- Footer Start-->
+    <footer>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12" id="social-networks">
+  	            <a href="mailto:unnatidave11@gmail.com" class="support">Contact Us</a>
+  			    <a href="#" class="support" target="_blank"> Source Code</a>
+  			    <a href="https://github.com/UNNATIDAVE" class="support" target="_blank"><i class="fa fa-github"></i> gitHub</a> 
+		        <a href="#" class="support"><i class="fa fa-linkedin"></i></a>
+    		  </div>
+    		  <div class="col-sm-12 col-md-12 col-lg-12" id="footer-copyright">
+    		     <p>Copyright © Game of Thrones single page Application by unnatidave </p>
+    		  </div>
+        </div>
+      </div>
+	</footer>
+  			
+  	<!-- JavaScript Files -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    
+   <script type="text/javascript" src="modules/app.js"></script>
+      <script type="text/javascript" src="modules/route.js"></script>
+      <script type="text/javascript" src="directives/main-directive.js"></script>
+      <script type="text/javascript" src="services/service.js"></script>
+      <script type="text/javascript" src="js/script.js"></script>
+      <script type="text/javascript" src="js/filter.js"></script>
+      <script type="text/javascript" src="controllers/header.js"></script>
+      <script type="text/javascript" src="controllers/all-controllers.js"></script>
+      <script type="text/javascript" src="controllers/book-controller.js"></script>
+      <script type="text/javascript" src="controllers/character-controller.js"></script>
+      <script type="text/javascript" src="controllers/house-controller.js"></script>
+  </body>
+</html>
