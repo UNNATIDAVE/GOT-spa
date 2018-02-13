@@ -11,13 +11,13 @@
             </div>
             <div class="col-md-3  col-xs-6 col-sm-3"  style="padding:0 !important; margin:10px 0px">
 	            <select class="hh" ng-model="searchCharName.name"  >
-	               <option class="form-control"  value="" enabled >--Select Name--</option>
+	               <option class="form-control"  value="" selected="selected" >--Select Name--</option>
 	               <option class=" form-control" ng-repeat="item in mainCtrl.allChars | unique : 'name' | orderBy:'name'"  ng-if='item.name' value="{{item.name}}">{{item.name}}</option>
 	            </select>
          	</div>
 	        <div class="col-md-3  col-xs-6 col-sm-3" style="padding:0 !important; margin:10px 0px">
 	            <select class="hh" ng-model="searchCharGender.gender"  ">
-	               <option class="form-control"  value="" enabled >--Select Gender--</option>
+	               <option class="form-control"  value="" enabled selected="">--Select Gender--</option>
 	               <option class="form-control" ng-repeat="item in mainCtrl.allChars | unique : 'gender' | orderBy:'gender'" ng-if='item.gender' value="{{item.gender}}">{{item.gender}}</option>
 	            </select>
 	        </div>
