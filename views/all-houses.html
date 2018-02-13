@@ -11,13 +11,13 @@
            </div>
            <div class="col-md-4  col-xs-12 col-sm-4"  style="padding:0 !important; margin:10px 0px">
               <select class="hh" ng-model="searchHouseName.name" >
-                 <option class="form-control"  value="" enabled >--Select Name--</option>
+                 <option class="form-control"  value="" selected disabled hidden >--Select Name--</option>
                  <option class="form-control" ng-repeat="item in mainCtrl.allHouses | unique : 'name' | orderBy:'name'" value="{{item.name}}"> {{item.name}}</option>
               </select>
            </div>
            <div class="col-md-4 col-xs-12 col-sm-4"  style="padding:0 !important; margin:10px 0px">
               <select class="hh" id = "target" ng-model="searchHouseRegion">
-                 <option class="form-control"  value="" enabled >--Select Region--</option>
+                 <option class="form-control"  value="" selected disabled hidden >--Select Region--</option>
                  <option class="form-control" ng-repeat="item in mainCtrl.allHouses |  unique : 'region' | orderBy:'region'" ng-if='item.region'  value="{{item.region}}"> {{item.region}}</option>
               </select>
            </div>
